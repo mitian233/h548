@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8ef">
+  <meta name="description" content="Play classic 2048. Merge matching tiles with arrow keys or a swipe.">
+  <title>2048</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23edc22e'/%3E%3Ctext x='32' y='39' font-family='Arial' font-weight='bold' font-size='23' text-anchor='middle' fill='%23f9f6f2'%3E2048%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header class="heading">
+      <h1>2048</h1>
+      <div class="scores" aria-label="Scores">
+        <div class="score-box"><span class="score-label">Score</span><strong id="score">0</strong><span id="score-add" aria-hidden="true"></span></div>
+        <div class="score-box"><span class="score-label">Best</span><strong id="best">0</strong></div>
+      </div>
+    </header>
+    <div class="toolbar">
+      <p class="control-hint"><span class="keyboard-hint">Arrow keys or WASD</span><span class="swipe-hint">Swipe to move</span></p>
+      <button id="restart" type="button">New Game</button>
+    </div>
+    <section class="board-wrap" aria-label="2048 game">
+      <canvas id="board" width="500" height="500" tabindex="0" aria-label="2048 board. Use arrow keys, WASD, or swipe to move tiles.">Your browser must support Canvas to play.</canvas>
+      <div id="overlay" class="overlay" hidden>
+        <h2 id="overlay-title">Game over</h2>
+        <p id="overlay-detail"></p>
+        <div class="overlay-actions">
+          <button id="continue" type="button" hidden>Keep Playing</button>
+          <button id="retry" type="button">Try Again</button>
+        </div>
+      </div>
+    </section>
+    <nav class="touch-controls" aria-label="Move tiles">
+      <button type="button" data-direction="left" aria-label="Move left">←</button>
+      <button type="button" data-direction="up" aria-label="Move up">↑</button>
+      <button type="button" data-direction="down" aria-label="Move down">↓</button>
+      <button type="button" data-direction="right" aria-label="Move right">→</button>
+    </nav>
+    <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

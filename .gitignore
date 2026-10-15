@@ -1,0 +1,10 @@
+# Native macOS app (separate project)
+macOS/
+
+# Local tooling and agent artifacts
+.playwright-cli/
+docs/
+.DS_Store
+
+# Test screenshots and browser state
+tests/*.png
